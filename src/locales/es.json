@@ -1,0 +1,92 @@
+{
+    "login": {
+        "title": "Inicio de sesión",
+        "username": "Usuario",
+        "password": "Contraseña",
+        "submit_btn": "Ingresar"
+    },
+    "ui": {
+        "navigation": {
+            "home": {
+                "title": "Inicio"
+            },
+            "quotations": {
+                "title": "Cotizaciones",
+                "new": "Nueva",
+                "edit": "Editar",
+                "delete": "Eliminar"
+            },
+            "invoices": {
+                "title": "Facturación",
+                "new": "Nueva",
+                "edit": "Editar",
+                "delete": "Eliminar"
+            },
+            "settings": {
+                "title": "Configuración"
+            }
+        },
+        "footer": {
+            "copyright": "Copyright © 2025 Windows & Doors. Todos los derechos reservados."
+        }
+    },
+    "dashboard": {
+        "home": {
+            "welcomeMessage": "¡Bienvenido, ",
+            "nickname": "suegro!",
+            "instructions": "Por favor seleciona una opción",
+            "button": {
+                "quotations": "Cotizaciones",
+                "invoices": "Facturación",
+                "settinsgs": "Configuración"
+            }
+        },
+        "quotations": {
+            "mainPage": {
+                "title": "Cotizaciones",
+                "instructions": "Por favor, selecciona una opción",
+                "button":{
+                    "new": "Nueva",
+                    "edit": "Editar",
+                    "delete": "Eliminar" 
+                }
+            }
+        },
+        "invoices": {
+            "mainPage": {
+                "title": "Facturación",
+                "instructions": "Por favor, selecciona una opción",
+                "button":{
+                    "new": "Nueva",
+                    "edit": "Editar",
+                    "delete": "Eliminar" 
+                }
+            }
+        },
+        "settings": {
+            "title": "Configuración",
+            "system": {
+                "title": "Sistema",
+                "theme": {
+                    "title": "Tema",
+                    "description": "El sistema muestra el tema",
+                    "extras": {
+                        "darkmode": "oscuro",
+                        "lightmode": "claro"
+                    }
+                },
+                "language": {
+                    "title": "Idioma",
+                    "description": "El idioma actual del sistema es"
+                }
+            },
+            "about": {
+                "title": "Acerca de",
+                "softwareVersion": {
+                    "title": "Versión del sistema",
+                    "description": "La version del sistema es:"
+                }
+            }
+        }
+    }
+}

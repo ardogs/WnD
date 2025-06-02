@@ -1,0 +1,92 @@
+{
+    "login": {
+        "title": "로그인",
+        "username": "사용자 이름",
+        "password": "비밀번호",
+        "submit_btn": "제출"
+    },
+    "ui": {
+        "navigation": {
+            "home": {
+                "title": "홈"
+            },
+            "quotations": {
+                "title": "견적서",
+                "new": "새로운",
+                "edit": "편집",
+                "delete": "삭제"
+            },
+            "invoices": {
+                "title": "송장",
+                "new": "새로운",
+                "edit": "편집",
+                "delete": "삭제"
+            },
+            "settings": {
+                "title": "설정"
+            }
+        },
+        "footer": {
+            "copyright": "Copyright © 2025 Windows & Doors. 모든 권리 보유."
+        }
+    },
+    "dashboard": {
+        "home": {
+            "welcomeMessage": "환영합니다,",
+            "nickname": "장인어른!",
+            "instructions": "시작하려면 옵션을 선택해 주세요",
+            "button": {
+                "quotations": "견적서",
+                "invoices": "송장",
+                "settinsgs": "설정"
+            }
+        },
+        "quotations": {
+            "mainPage": {
+                "title": "견적서",
+                "instructions": "시작하려면 옵션을 선택해 주세요",
+                "button": {
+                    "new": "새로운",
+                    "edit": "편집",
+                    "delete": "삭제"
+                }
+            }
+        },
+        "invoices": {
+            "mainPage": {
+                "title": "송장",
+                "instructions": "시작하려면 옵션을 선택해 주세요",
+                "button": {
+                    "new": "새로운",
+                    "edit": "편집",
+                    "delete": "삭제"
+                }
+            }
+        },
+        "settings": {
+            "title": "설정",
+            "system": {
+                "title": "시스템",
+                "theme": {
+                    "title": "테마",
+                    "description": "시스템이 실행 중입니다",
+                    "extras": {
+                        "darkmode": "다크 모드",
+                        "lightmode": "라이트 모드"
+                    }
+                },
+                "language": {
+                    "title": "언어",
+                    "description": "현재 시스템 언어는"
+                }
+            },
+            "about": {
+                "title": "정보",
+                "softwareVersion": {
+                    "title": "소프트웨어 버전",
+                    "description": "현재 시스템 버전:"
+                }
+            }
+        }
+    }
+}
