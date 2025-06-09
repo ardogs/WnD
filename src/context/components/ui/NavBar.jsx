@@ -1,6 +1,6 @@
 import { Layout, Image, Typography, Flex} from "antd";
 import logo from '../../../assets/logo_2.webp';
-import { DarkmodeSwitch} from "../settings";
+import { DarkmodeSwitch } from "../../../dashboard/settings/components";
 const { Title } = Typography
 
 const { Header } = Layout;

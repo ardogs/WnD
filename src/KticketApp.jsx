@@ -1,38 +1,31 @@
-import { useEffect } from "react";
 import { BrowserRouter } from "react-router";
-import { useDispatch, useSelector } from 'react-redux';
-import "./utils/translation/i18n";
-import { ConfigProvider, theme } from "antd";
 import { KticketRouter } from "./router/KticketRouter";
+import { ConfigProvider, theme } from "antd";
+import { App as AntdApp } from 'antd';
 import { lightTheme, darkTheme } from './features/theme';
-import { setDarkMode } from "./store/theme";
+import "./services/translation/i18n";
+import { useSettings } from "./hooks";
+import { AppInitializer } from "./AppInitializer";
+
 
 export const KticketApp = () => {
 
-  const darkMode = useSelector((state) => state.theme.darkMode);
-  const currentTheme = darkMode ? darkTheme : lightTheme;
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-
-    const savedMode = localStorage.getItem('darkMode');
-    if (savedMode !== null) 
-      dispatch(setDarkMode(savedMode === 'true'));
-
-    document.body.style.backgroundColor = currentTheme.token.colorBgBase;
-
-  }, [currentTheme, dispatch]);
-
+  const { darkmode, isLoadingApp } = useSettings();
+  
   return (
-    <>
+    <AntdApp>
       <BrowserRouter>
-        <ConfigProvider theme={{ ...(!darkMode ? lightTheme : darkTheme), algorithm: darkMode ? theme.darkAlgorithm : theme.defaultAlgorithm }}>
-          <KticketRouter />
+        <ConfigProvider theme={{ ...(!darkmode ? lightTheme : darkTheme), algorithm: darkmode ? theme.darkAlgorithm : theme.defaultAlgorithm }}>
+          <AppInitializer />
+          {isLoadingApp ? <h1>Cargando...</h1> : <KticketRouter />}
         </ConfigProvider>
       </BrowserRouter>
-    </>
+    </AntdApp>
   )
 }
+  //   // const savedMode = localStorage.getItem('darkMode');
+  //   // if (savedMode !== null) 
+  //   // dispatch(setDarkMode( darkMode ));
 
 
 

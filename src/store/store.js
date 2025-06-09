@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { themeSlice } from './theme';
+import { settingsSlice } from './settings';
+import { quotationSlice } from './quotation';
 
 export const store = configureStore({
     reducer: {
-        theme: themeSlice.reducer
+        settings: settingsSlice.reducer,
+        quotattion: quotationSlice.reducer
     },
 });

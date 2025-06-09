@@ -44,5 +44,5 @@ export const BreadcrumbUI = () => {
         ...extraBreadcrumbItems,
     ];
 
-    return <Breadcrumb style={{ margin: '16px 0' }} items={breadcrumbItems} />;
+    return <Breadcrumb separator=">" style={{ margin: '16px 0' }} items={breadcrumbItems} />;
 };

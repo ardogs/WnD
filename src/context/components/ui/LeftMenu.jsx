@@ -47,7 +47,6 @@ export const LeftMenu = () => {
     const { t } = useTranslation();
     const { token: { customColor, colorBgContainer, borderRadiusLG } } = theme.useToken();
     const location = useLocation();
-    console.log(location.pathname)
 
     return (
         <Sider style={{ background: colorBgContainer, borderRadius: borderRadiusLG, zIndex: 1 }} width={300} breakpoint="lg"

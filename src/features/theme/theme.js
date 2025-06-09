@@ -1,8 +1,8 @@
 export const lightTheme = {
     token: {
-        // colorPrimary: '#265566',
-        // colorBgBase: '#eceff1',
-        colorTextBase: '#000000',
+        colorPrimary: '#265566',
+        colorBgBase: '#eceff1',
+        colorTextBase: '#262626',
         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
         boxShadowSecondary: '0 2px 4px rgba(0, 0, 0, 0.06)',
         boxShadowTertiary: '0 8px 16px rgba(0, 0, 0, 0.12)',
