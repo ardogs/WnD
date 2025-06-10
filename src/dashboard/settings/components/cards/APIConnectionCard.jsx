@@ -15,13 +15,11 @@ const handleonClick = async (dispatch) => {
     await dispatch(getConnectionStatus())
 }
 
-
-
 export const APIConnectionCard = () => {
 
     const { colors: { green, red }, shadows: { boxShadow } } = useTheme();
     const { statusConnection, isLoadingStatusConnection, dispatch } = useSettings();
-    
+
     return (
         <Card title="Probar conexión" variant="outlined" style={{ boxShadow: boxShadow, height: '100%' }}>
             <Space align="center" >

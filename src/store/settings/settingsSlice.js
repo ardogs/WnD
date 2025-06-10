@@ -3,7 +3,7 @@ import i18n from '../../services/translation/i18n';
 
 const initialState = {
     settings: {
-        darkmode: false,
+        darkmode: true,
         language: 'ES',
         apiURL: 'http://192.168.0.70:5263',
         apiVersion: '0.0.1-aplpha'
