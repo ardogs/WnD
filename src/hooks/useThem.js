@@ -10,6 +10,8 @@ export const useTheme = () => {
             colorPrimary,
             colorBgBase,
             colorTextBase,
+            colorBgContainer,
+            borderRadiusLG
         },
     } = theme.useToken();
 
@@ -25,5 +27,7 @@ export const useTheme = () => {
             bgBase: colorBgBase,
             textBase: colorTextBase,
         },
+        colorBgContainer,
+        borderRadiusLG
     };
 };

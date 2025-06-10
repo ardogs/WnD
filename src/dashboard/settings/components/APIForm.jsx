@@ -3,6 +3,7 @@ import { App, Button, Form, Input, Select, theme } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateAPIURL } from '../../../store/settings';
 import { useEffect } from 'react';
+import { useTheme } from '../../../hooks';
 // const { Option } = Select;
 
 // const selectBefore = (
@@ -26,9 +27,9 @@ export const APIForm = () => {
     const onFinishFailed = errorInfo => {
         console.log('Failed:', errorInfo);
     };
-    const {
-        token: { customColor: { green } },
-    } = theme.useToken();
+    const { colors } = useTheme();
+    const { green } = colors;
+
 
     const [form] = Form.useForm();
 

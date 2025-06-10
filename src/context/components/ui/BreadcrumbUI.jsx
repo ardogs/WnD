@@ -1,8 +1,8 @@
 
 
 import { Breadcrumb } from 'antd';
-import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router';
+import { useUITranslation } from '../../../hooks';
 
 const breadcrumbNameMap = (t) => ({
     '/': t("ui.navigation.home.title"),
@@ -19,7 +19,7 @@ const breadcrumbNameMap = (t) => ({
 
 export const BreadcrumbUI = () => {
 
-      const { t } = useTranslation();
+    const { t } = useUITranslation();
     const location = useLocation();
 
     const pathSnippets = location.pathname.split('/').filter(i => i);

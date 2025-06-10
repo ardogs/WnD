@@ -1,7 +1,7 @@
 import { DeleteFilled, EditFilled, FileAddFilled } from "@ant-design/icons"
 import { Button, Flex, theme, Typography } from "antd"
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
+import { useUITranslation } from "../../../hooks";
 
 const { Title } = Typography
 export const MainPageQuotations = () => {
@@ -9,7 +9,7 @@ export const MainPageQuotations = () => {
   const {
     token: { customColor: { green, orange, red }, boxShadow },
   } = theme.useToken();
-  const { t } = useTranslation();
+  const { t } = useUITranslation();
 
   return (
     <Flex vertical style={{ flex: 1, width: '100%' }}>

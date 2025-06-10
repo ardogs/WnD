@@ -1,7 +1,7 @@
-import { Flex, Layout, Menu, theme } from 'antd';
+import { Flex, Layout, Menu} from 'antd';
 import { FileExcelFilled, HomeFilled, ProjectFilled, SettingFilled } from '@ant-design/icons';
 import { Link, useLocation } from 'react-router';
-import { useTranslation } from 'react-i18next';
+import { useTheme, useUITranslation } from '../../../hooks';
 
 const { Sider } = Layout;
 const defaultOpenKeys = ['home', 'quotations', 'invoices', 'settings'];
@@ -44,8 +44,8 @@ const optionsArray = (t, color = {}) => {
 
 export const LeftMenu = () => {
 
-    const { t } = useTranslation();
-    const { token: { customColor, colorBgContainer, borderRadiusLG } } = theme.useToken();
+    const { t } = useUITranslation();
+     const { colors, colorBgContainer, borderRadiusLG } = useTheme()
     const location = useLocation();
 
     return (
@@ -55,7 +55,7 @@ export const LeftMenu = () => {
         >
             <Flex align="center" justify='center' >
                 <div className="demo-logo-vertical" />
-                <Menu mode="inline" defaultSelectedKeys={['home']} selectedKeys={[getSelectedKey(location.pathname)]} defaultOpenKeys={defaultOpenKeys} style={{ borderInlineEnd: 'none', }} items={optionsArray(t, customColor)} />
+                <Menu mode="inline" defaultSelectedKeys={['home']} selectedKeys={[getSelectedKey(location.pathname)]} defaultOpenKeys={defaultOpenKeys} style={{ borderInlineEnd: 'none', }} items={optionsArray(t, colors)} />
             </Flex>
         </Sider>
     )

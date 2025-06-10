@@ -1,18 +1,15 @@
-import { useTranslation } from 'react-i18next';
-import { Button, Flex, Layout, theme, Typography } from 'antd';
+import { Button, Flex, Layout,Typography } from 'antd';
 import { FooterUI, NavBar, BreadcrumbUI, LeftMenu } from '../../context/components/ui';
 import { useLocation, useNavigate } from 'react-router';
 import { ArrowLeftOutlined, HomeFilled } from '@ant-design/icons';
 import { PathNametoTitle } from '../../utils'
+import { useTheme, useUITranslation } from '../../hooks';
 
 const { Content } = Layout;
 const { Title } = Typography
 export const DashboardLayout = ({ children }) => {
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
-
-  const { t } = useTranslation();
+  const { colorBgContainer, borderRadiusLG } = useTheme();
+  const { t } = useUITranslation();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -29,7 +26,7 @@ export const DashboardLayout = ({ children }) => {
             <Flex >
               <Button disabled={(location.pathname === '/') ? true : false} size="large" type="text" style={{ margin: '15px 0 15px 5px' }} onClick={() => navigate(-1)}><ArrowLeftOutlined /></Button>
               <Button disabled={(location.pathname === '/') ? true : false} size="large" type="text" style={{ margin: '15px 0 0px' }} onClick={() => navigate('..')}><HomeFilled /></Button>
-              <Title level={1} style={{  margin: '15px 0 0px 25px' }}> {PathNametoTitle(t)[location.pathname]} </Title>
+              <Title level={1} style={{ margin: '15px 0 0px 25px' }}> {PathNametoTitle(t)[location.pathname]} </Title>
             </Flex>
             <Content style={{ padding: '10px 24px', display: 'flex', flex: 1, flexDirection: 'column', overflow: 'auto' }}>
               {children}

@@ -1,16 +1,18 @@
 import { FileExcelFilled, ProjectFilled, SettingFilled } from "@ant-design/icons"
-import { Button, Flex, theme, Typography } from "antd"
-import { useTranslation } from "react-i18next";
+import { Button, Flex, Typography } from "antd"
 import { Link } from "react-router";
+import { useTheme, useUITranslation } from "../../../hooks";
 
-const { Title} = Typography
+const { Title } = Typography
 export const HomePage = () => {
 
-  const {
-    token: { customColor: {green, orange, cyan}, boxShadow },
-  } = theme.useToken();
 
-  const { t } = useTranslation();
+
+  const { colors, shadows } = useTheme();
+  const { green, orange, cyan } = colors;
+  const { boxShadow } = shadows;
+
+  const { t } = useUITranslation();
 
   return (
     <Flex vertical style={{ flex: 1, width: '100%' }}>
