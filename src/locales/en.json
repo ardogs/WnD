@@ -102,5 +102,14 @@
                 }
             }
         }
+    },
+    "apiMessages":{
+
+        "settings":{
+            "updateSuccess":"The settings have been saved",
+            "updateError": "Error saving settings. Error code: ",
+            "getInitialConfigurationError": "Error retrieving configuration updates. Please check the API connection. Error code: "
+        }
     }
+    
 }

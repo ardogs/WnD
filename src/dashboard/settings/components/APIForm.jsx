@@ -1,5 +1,5 @@
 
-import { App, Button, Form, Input, Select, theme } from 'antd';
+import { App, Button, Form, Input,} from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateAPIURL } from '../../../store/settings';
 import { useEffect } from 'react';
@@ -24,7 +24,7 @@ export const APIForm = () => {
 
     const onFinish = async (values) => {
         const result = await dispatch(updateAPIURL(values));
-        (result?.ok) ? message.success(result.message) : message.error(result.message);
+        (result?.ok) ? message.success(t("apiMessages.settings.updateSuccess")) : message.error(`${t("apiMessages.settings.updateError")} ${result.error}`);
     };
     const onFinishFailed = errorInfo => {
         console.log('Failed:', errorInfo);

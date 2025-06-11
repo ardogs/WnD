@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { App as AntdApp } from "antd";
 import { fetchAppSettings } from "./store/settings";
 import { lightTheme, darkTheme } from './features/theme';
+import { useUITranslation } from "./hooks";
 
 export const AppInitializer = () => {
     const dispatch = useDispatch();
@@ -10,20 +11,15 @@ export const AppInitializer = () => {
 
     const darkMode = useSelector((state) => state.settings.settings.darkmode);
     const currentTheme = darkMode ? darkTheme : lightTheme;
+    const { t } = useUITranslation();
 
     useEffect(() => {
         const init = async () => {
             const result = await dispatch(fetchAppSettings());
-            // const result = {ok: true, message: "Todo bien"  }
-            
-            result?.ok
-                ? message.success(result.message)
-                : message.error(result.message);
+            if (!result?.ok) message.error(`${t("apiMessages.settings.getInitialConfigurationError")} ${result?.error}`);
         };
 
-        
 
-        // ✅ Aplicar fondo basado en el tema actual
         document.body.style.backgroundColor = currentTheme.token.colorBgBase;
         init();
 

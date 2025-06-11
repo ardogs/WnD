@@ -6,9 +6,7 @@ export const NewQuotationPage = () => {
   const dispatch = useDispatch();
 
   const handleClick = async() => {
-    console.log('LLhue')
     const result =  await dispatch(fetchAllSuppliers())
-    console.log(result)
   }
   return (
     <>

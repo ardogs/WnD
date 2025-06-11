@@ -78,14 +78,14 @@
                 }
             },
             "APIConnection": {
-                "title" : "API 연결",
-                "baseurl":{
+                "title": "API 연결",
+                "baseurl": {
                     "title": "API URL",
                     "label": "API URL",
                     "placeholder": "API URL",
                     "button": "업데이트"
                 },
-                "connectionCheck":{
+                "connectionCheck": {
                     "title": "테스트 연결",
                     "button": "테스트 시작",
                     "message": {
@@ -102,6 +102,13 @@
                     "descriptionAPI": "API 버전:"
                 }
             }
+        }
+    },
+    "apiMessages": {
+        "settings": {
+            "updateSuccess": "설정이 저장되었습니다",
+            "updateError": "설정 저장 중 오류 발생. 오류 코드:",
+            "getInitialConfigurationError": "구성 업데이트를 가져오는 중 오류가 발생했습니다. API 연결을 확인하세요. 오류 코드:"
         }
     }
 }
