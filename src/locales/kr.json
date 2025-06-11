@@ -1,9 +1,6 @@
 {
-    "login": {
-        "title": "로그인",
-        "username": "사용자 이름",
-        "password": "비밀번호",
-        "submit_btn": "제출"
+    "loading": {
+        "instruction": "시스템이 로딩 중입니다."
     },
     "ui": {
         "navigation": {
@@ -80,11 +77,29 @@
                     "description": "현재 시스템 언어는"
                 }
             },
+            "APIConnection": {
+                "title" : "API 연결",
+                "baseurl":{
+                    "title": "API URL",
+                    "label": "API URL",
+                    "placeholder": "API URL",
+                    "button": "업데이트"
+                },
+                "connectionCheck":{
+                    "title": "테스트 연결",
+                    "button": "테스트 시작",
+                    "message": {
+                        "success": "연결이 설정되었습니다",
+                        "error": "연결 오류"
+                    }
+                }
+            },
             "about": {
                 "title": "정보",
                 "softwareVersion": {
                     "title": "소프트웨어 버전",
-                    "description": "현재 시스템 버전:"
+                    "descriptionFE": "프런트엔드 버전:",
+                    "descriptionAPI": "API 버전:"
                 }
             }
         }

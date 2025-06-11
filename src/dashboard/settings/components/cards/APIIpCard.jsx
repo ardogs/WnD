@@ -8,7 +8,7 @@ export const APIIpCard = () => {
   const { t } = useUITranslation();
   const { shadows: { boxShadow } } = useTheme();
   return (
-    <Card title="Base URL" variant="outlined" style={{ boxShadow: boxShadow, height: '100%' }}>
+    <Card title={t("dashboard.settings.APIConnection.baseurl.title")} variant="outlined" style={{ boxShadow: boxShadow, height: '100%' }}>
       <Row>
         <Col span={24}>
           <APIForm />

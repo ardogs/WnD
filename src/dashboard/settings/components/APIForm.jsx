@@ -3,7 +3,7 @@ import { App, Button, Form, Input, Select, theme } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateAPIURL } from '../../../store/settings';
 import { useEffect } from 'react';
-import { useTheme } from '../../../hooks';
+import { useTheme, useUITranslation } from '../../../hooks';
 // const { Option } = Select;
 
 // const selectBefore = (
@@ -19,6 +19,8 @@ export const APIForm = () => {
     const apiURL = useSelector((state) => state.settings.settings.apiURL);
     const loading = useSelector((state) => state.settings.isLoading.apiURL);
     const { message } = App.useApp();
+
+    const { t } = useUITranslation();
 
     const onFinish = async (values) => {
         const result = await dispatch(updateAPIURL(values));
@@ -41,12 +43,12 @@ export const APIForm = () => {
 
     return (
         <Form name="basic" onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete="off" layout="inline" form={form}>
-            <Form.Item label="API url" name="apiURL" rules={[{ required: true, message: 'Please set an IP Address' }]}>
-                <Input placeholder='API URL' value={apiURL} />
+            <Form.Item label={t("dashboard.settings.APIConnection.baseurl.label")} name="apiURL" rules={[{ required: true, message: 'Please set an IP Address' }]}>
+                <Input placeholder={t("dashboard.settings.APIConnection.baseurl.placeholder")} value={apiURL} />
             </Form.Item>
 
             <Form.Item label={null}>
-                <Button htmlType="submit" style={{ ...green }} loading={loading}> Update </Button>
+                <Button htmlType="submit" style={{ ...green }} loading={loading}>{t("dashboard.settings.APIConnection.baseurl.button")}</Button>
             </Form.Item>
         </Form>
     )

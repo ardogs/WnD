@@ -1,9 +1,6 @@
 {
-    "login": {
-        "title": "Login",
-        "username": "Username",
-        "password": "Password",
-        "submit_btn": "Submit"
+    "loading": {
+        "instruction": "System is loading."
     },
     "ui": {
         "navigation": {
@@ -80,11 +77,28 @@
                     "description": "The current system language is:"
                 }
             },
+            "APIConnection": {
+                "title": "API Connection",
+                "baseurl": {
+                    "title": "API base URL",
+                    "label": "API URL",
+                    "placeholder": "API URL",
+                    "button": "Update"
+                },
+                "connectionCheck": {
+                    "title": "Test connection",
+                    "button": "Start test",
+                    "message": {
+                        "success": "Connection established",
+                        "error": "Connection error"
+                    }
+                }
+            },
             "about": {
                 "title": "About",
                 "softwareVersion": {
-                    "title": "Software version",
-                    "description": " The current system version is:"
+                    "descriptionFE": "Front-end version:",
+                    "descriptionAPI": "API version:"
                 }
             }
         }

@@ -12,17 +12,17 @@ export const SettingsPage = () => {
     return (
         <SettingsLayout>
             <SettingSectionLayout title={t("dashboard.settings.system.title")}>
-                <Col xs={24} lg={24} xl={24} xxl={6}>
+                <Col xs={24} lg={24} xl={24} xxl={7}>
                     <ThemeCard />
                 </Col>
 
-                <Col xs={24} lg={24} xl={24} xxl={7}>
+                <Col xs={24} lg={24} xl={24} xxl={9}>
                     <LanguageCard />
                 </Col>
             </SettingSectionLayout>
 
-            <SettingSectionLayout title="Conexión a la API">
-                <Col xs={24} lg={24} xl={24} xxl={7}>
+            <SettingSectionLayout title={t("dashboard.settings.APIConnection.title")}>
+                <Col xs={24} lg={24} xl={24} xxl={10}>
                     <APIIpCard />
                 </Col>
                 <Col xs={24} lg={24} xl={24} xxl={6}>
@@ -31,7 +31,7 @@ export const SettingsPage = () => {
             </SettingSectionLayout>
 
             <SettingSectionLayout title={t("dashboard.settings.about.title")}>
-                <Col xs={24} lg={24} xl={24} xxl={5}>
+                <Col xs={24} lg={24} xl={24} xxl={7}>
                     <SystemInfoCard />
                 </Col>
             </SettingSectionLayout>

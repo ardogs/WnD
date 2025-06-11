@@ -1,9 +1,6 @@
 {
-    "login": {
-        "title": "Inicio de sesión",
-        "username": "Usuario",
-        "password": "Contraseña",
-        "submit_btn": "Ingresar"
+    "loading": {
+        "instruction": "El sistema esta cargando."
     },
     "ui": {
         "navigation": {
@@ -45,10 +42,10 @@
             "mainPage": {
                 "title": "Cotizaciones",
                 "instructions": "Por favor, selecciona una opción",
-                "button":{
+                "button": {
                     "new": "Nueva",
                     "edit": "Editar",
-                    "delete": "Eliminar" 
+                    "delete": "Eliminar"
                 }
             }
         },
@@ -56,10 +53,10 @@
             "mainPage": {
                 "title": "Facturación",
                 "instructions": "Por favor, selecciona una opción",
-                "button":{
+                "button": {
                     "new": "Nueva",
                     "edit": "Editar",
-                    "delete": "Eliminar" 
+                    "delete": "Eliminar"
                 }
             }
         },
@@ -77,14 +74,31 @@
                 },
                 "language": {
                     "title": "Idioma",
-                    "description": "El idioma actual del sistema es"
+                    "description": "El idioma actual del sistema es:"
+                }
+            },
+            "APIConnection": {
+                "title" : "Titulo en Español",
+                "baseurl":{
+                    "title": "URL base del API",
+                    "label": "URL del API ",
+                    "placeholder": "URL del API",
+                    "button": "Actualizar"
+                },
+                "connectionCheck":{
+                    "title": "Probar conexión",
+                    "button": "Iniciar prueba",
+                    "message": {
+                        "success": "Conexión establecida",
+                        "error": "Error en la conexión"
+                    }
                 }
             },
             "about": {
-                "title": "Acerca de",
+                "title": "Información del sistema",
                 "softwareVersion": {
-                    "title": "Versión del sistema",
-                    "description": "La version del sistema es:"
+                    "descriptionFE": "Versión del Front-end:",
+                    "descriptionAPI": "Versión del API:"
                 }
             }
         }

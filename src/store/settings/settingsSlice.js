@@ -6,7 +6,7 @@ const initialState = {
         darkmode: true,
         language: 'ES',
         apiURL: 'http://192.168.0.70:5263',
-        apiVersion: '0.0.1-aplpha'
+        apiVersion: '0.2.1-alpha'
     },
     isLoading: {
         darkmode: false,

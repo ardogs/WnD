@@ -9,10 +9,10 @@ export const SystemInfoCard = () => {
     const { apiVersion } = useSettings();
     const { t } = useUITranslation();
     return (
-        <Card title={t("dashboard.settings.about.softwareVersion.title")} variant="outlined" style={{ boxShadow: boxShadow }}>
-            <Text>{t("dashboard.settings.about.softwareVersion.description")}  <b>{__APP_VERSION__}</b></Text>
+        <Card title={t("dashboard.settings.about.title")} variant="outlined" style={{ boxShadow: boxShadow }}>
+            <Text>{t("dashboard.settings.about.softwareVersion.descriptionFE")}  <b>{__APP_VERSION__}</b></Text>
             <br />
-            <Text >Versión de la API:  <b>{apiVersion}</b></Text>
+            <Text>{t("dashboard.settings.about.softwareVersion.descriptionAPI")} <b>{apiVersion}</b></Text>
         </Card>
     )
 }
