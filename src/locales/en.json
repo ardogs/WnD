@@ -47,6 +47,15 @@
                     "edit": "Edit",
                     "delete": "Delete"
                 }
+            }, 
+            "newQuotation":{
+                "title": "New Quotation"
+            },
+            "editQuotation": {
+
+            },
+            "deleteQuotation": {
+
             }
         },
         "invoices": {

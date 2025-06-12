@@ -47,6 +47,15 @@
                     "edit": "Editar",
                     "delete": "Eliminar"
                 }
+            }, 
+            "newQuotation":{
+                "title": "Nueva cotización"
+            },
+            "editQuotation": {
+
+            },
+            "deleteQuotation": {
+
             }
         },
         "invoices": {
@@ -104,7 +113,6 @@
         }
     },
     "apiMessages":{
-
         "settings":{
             "updateSuccess":"Las configuraciones han sido guardadas",
             "updateError": "Error al guardar las configuraciones. Código de error: ",

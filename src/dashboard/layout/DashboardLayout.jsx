@@ -10,7 +10,7 @@ const { Title } = Typography;
 
 const NavigationBar = (location, navigate, t) => {
   return (
-    <Flex>
+    <Flex className="no-select">
       <Button disabled={(location.pathname === '/') ? true : false} size="large" type="text" style={{ margin: '15px 0 15px 5px' }} onClick={() => navigate(-1)}><ArrowLeftOutlined /></Button>
       <Button disabled={(location.pathname === '/') ? true : false} size="large" type="text" style={{ margin: '15px 0 0px' }} onClick={() => navigate('..')}><HomeFilled /></Button>
       <Title level={1} style={{ margin: '15px 0 0px 25px' }}> {PathNametoTitle(t)[location.pathname]} </Title>
