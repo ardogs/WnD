@@ -19,7 +19,7 @@ body {
 }
 
 .theme-transition,
-.theme-transition .ant-layout{
+.theme-transition .ant-layout {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 

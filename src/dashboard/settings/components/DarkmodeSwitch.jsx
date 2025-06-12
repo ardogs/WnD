@@ -1,5 +1,5 @@
 import { updateDarkMode } from '../../../store/settings'
-import { App, Switch, } from 'antd';
+import { App, Switch} from 'antd';
 import { SunFilled, MoonFilled } from '@ant-design/icons';
 import { useSettings, useUITranslation } from '../../../hooks';
 

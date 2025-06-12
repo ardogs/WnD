@@ -21,7 +21,7 @@ export const updateDarkMode = (enabled) => {
     return async (dispatch) => {
         dispatch(setLoading({ key: 'darkmode', value: true }));
         try {
-            await updateDarkModeAPI(enabled);
+            // await updateDarkModeAPI(enabled);
             dispatch(setDarkMode(enabled));
             return { ok: true, enabled }
         } catch (error) {

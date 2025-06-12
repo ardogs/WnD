@@ -5,9 +5,9 @@ import { getConnectionStatus } from '../../../../store/settings';
 
 const ConnectionStatusIcon = (status, green, red) => {
     return status ? (
-        <CheckCircleFilled style={{ fontSize: '20px', marginLeft: 20, color: green.backgroundColor }} />
+        <CheckCircleFilled style={{ fontSize: '22px', marginLeft: 5, color: green.backgroundColor }} />
     ) : (
-        <CloseCircleFilled style={{ fontSize: '20px', marginLeft: 20, color: red.backgroundColor }} />
+        <CloseCircleFilled style={{ fontSize: '22px', marginLeft: 5, color: red.backgroundColor }} />
     );
 };
 

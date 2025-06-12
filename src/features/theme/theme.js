@@ -1,7 +1,7 @@
 export const lightTheme = {
     token: {
         colorPrimary: '#265566',
-        colorBgBase: '#eceff1',
+        colorBgBase: '#f4f4f5',
         colorTextBase: '#262626',
         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
         boxShadowSecondary: '0 2px 4px rgba(0, 0, 0, 0.06)',
@@ -41,6 +41,9 @@ export const lightTheme = {
             headerBg: '#263238',
             triggerBg: '#000',
             siderBg: '#263238'
+        },
+        message: {
+            contentBg: '#eceff1'
         }
     },
 
@@ -49,7 +52,7 @@ export const lightTheme = {
 
 export const darkTheme = {
     token: {
-        colorPrimary: '#71bbb6',
+        colorPrimary: '#b7eb8f',
         colorBgBase: '#1f1f1f',
         colorTextBase: '#ffffff',
         boxShadow: '0 4px 12px rgba(0, 0, 0, 0.5)',
@@ -87,7 +90,10 @@ export const darkTheme = {
     components: {
         Layout: {
             headerBg: '#263238',
-            siderBg: '#263238'
+            siderBg: '#263238',
+            
+        }, message: {
+            contentBg: '#f1ecec'
         }
     },
     algorithm: 'dark',
