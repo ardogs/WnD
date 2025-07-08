@@ -45,6 +45,10 @@ export const lightTheme = {
         },
         message: {
             contentBg: '#eceff1'
+        }, 
+        Menu:{
+            colorBgContainer: '#263238',
+            colorItemText: '#ffffff',
         }
     },
 
@@ -96,6 +100,10 @@ export const darkTheme = {
             
         }, message: {
             contentBg: '#f1ecec'
+        },
+        Menu:{
+            colorBgContainer: '#263238',
+            colorItemText: '#ffffff',
         }
     },
     algorithm: 'dark',

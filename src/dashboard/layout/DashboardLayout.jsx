@@ -27,12 +27,12 @@ export const DashboardLayout = ({ children }) => {
     <Layout style={{ minHeight: '100vh' }} className='theme-transition'>
       <NavBar />
       <Layout style={{ flex: 1 }} >
-        <LeftMenu translation={t} />
+        {/* <LeftMenu translation={t} /> */}
         <Content style={{ padding: '0 18px', display: 'flex', flexDirection: 'column', height: 'calc(100vh - 64px - 70px)', overflow: 'hidden' }}>
           <BreadcrumbUI translation={t} />
           <Layout style={{ flex: 1, background: colorBgContainer, borderRadius: borderRadiusLG, overflow: 'auto', height: 'calc(100vh - 64px - 100px)' }}>
             {NavigationBar(location, navigate, t)}
-            <Content style={{ padding: '0px 24px', display: 'flex', flex: 1, flexDirection: 'column', overflow: 'auto' }}>
+            <Content style={{ padding: '0px 65px', display: 'flex', flex: 1, flexDirection: 'column', overflow: 'auto' }}>
               {children}
             </Content>
           </Layout>
