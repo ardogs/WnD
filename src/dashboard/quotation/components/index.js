@@ -1,1 +1,2 @@
-export * from './NewQuotationForm'
+export * from './NewQuotationForm';
+export * from './CustomInputs';

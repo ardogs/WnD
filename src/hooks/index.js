@@ -1,3 +1,3 @@
 export * from './useSettings';
 export * from './useUITranslation';
-export * from './useThem';
+export * from './useTheme';

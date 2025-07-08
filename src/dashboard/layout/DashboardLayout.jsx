@@ -32,7 +32,7 @@ export const DashboardLayout = ({ children }) => {
           <BreadcrumbUI translation={t} />
           <Layout style={{ flex: 1, background: colorBgContainer, borderRadius: borderRadiusLG, overflow: 'auto', height: 'calc(100vh - 64px - 100px)' }}>
             {NavigationBar(location, navigate, t)}
-            <Content style={{ padding: '10px 24px', display: 'flex', flex: 1, flexDirection: 'column', overflow: 'auto' }}>
+            <Content style={{ padding: '0px 24px', display: 'flex', flex: 1, flexDirection: 'column', overflow: 'auto' }}>
               {children}
             </Content>
           </Layout>

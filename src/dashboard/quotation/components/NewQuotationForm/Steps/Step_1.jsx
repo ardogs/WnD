@@ -1,99 +1,93 @@
-import { Select, Col, Row, Flex, Image, Form, Input } from "antd";
 
-import Doc_0 from "../../../../../assets/Doc_0.png";
-import Doc_1 from "../../../../../assets/Doc_1.png";
-import Doc_2 from "../../../../../assets/Doc_2.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { Select, Col, Row, Flex, Image, Checkbox } from "antd";
+import { fetchAllSuppliers, setDocumentType, setIsEditable } from "../../../../../store/quotation";
+import { CustomField } from "../../CustomInputs";
 
 
-const options = [
-  { value: 0, label: '503-18-35279' },
-  { value: 1, label: '514-20-20987' },
-  { value: 2, label: '798-68-00335' },
+export const Step_1 = ({ setFieldValue }) => {
 
-];
+  const dispatch = useDispatch();
+  const { suppliers, isLoading, newQuotation } = useSelector(state => state.quotation);
+  const { documentType } = newQuotation;
+  const { isEditable  } = newQuotation.step1
+  const [img, setImg] = useState(`Doc_${documentType}`);
 
-const defaultOption = 1;
+  useEffect(() => {
+    if (!suppliers || suppliers.length === 0)
+      dispatch(fetchAllSuppliers()); // ① Hacer la llamada una vez al montar
+  }, [dispatch]);
 
-export const Step_1 = () => {
+  const handleSupplierChange = (index = 0) => {
+    setImg(`Doc_${index}`);
+    dispatch(setDocumentType(index));
 
-  const handleChange = (value) => {
-    switch (value) {
-      case 0:
-        setImg(Doc_0);
-        break;
-      case 1:
-        setImg(Doc_1);
-        break;
-      case 2:
-        setImg(Doc_2);
-        break;
-    }
-  }
+    const selected = suppliers[index];
+    if (!selected) return;
+    setFieldValue("registration_number", selected.registration_number);
+    setFieldValue("comercial_name", selected.comercial_name);
+    setFieldValue("legal_representative", selected.legal_representative);
+    setFieldValue("address", selected.address);
+    setFieldValue("type_of_business", selected.type_of_business);
+    setFieldValue("category", selected.category);
+    setFieldValue("tel_fax", selected.tel_fax);
+    setFieldValue("website", selected.website);
+  };
 
-  const [img, setImg] = useState(Doc_1);
+  const options = suppliers.map((item, index) => ({
+    value: index,
+    label: item.registration_number
+  }));
 
 
   return (
     <Row style={{ marginTop: '25px' }}>
-      <Col xs={24} xxl={10} style={{ Height: '100vh' }}>
+      {/* {console.log()} */}
+      <Col xs={24} xxl={14} style={{ Height: '100vh' }}>
         <Flex justify="center" align="center" style={{ height: '100%', width: '100%', gap: 25 }} vertical>
-          <Select defaultValue={defaultOption} onChange={handleChange} placeholder="Selección de documento" options={options} />
-          <Image width={"45%"} src={img} />
+          <Select defaultValue={documentType} onChange={(index) => handleSupplierChange(index)} placeholder="Selección de documento" options={options} loading={isLoading} />
+          <Checkbox checked={isEditable} onChange={(e) => dispatch(setIsEditable(e.target.checked))}>
+            Habilitar edición
+          </Checkbox>
+          <Image width={"35%"} src={`/src/assets/${img}.png`} />
         </Flex>
       </Col>
 
-      <Col xs={24} xxl={14} >
+      <Col xs={24} xxl={10} >
         <Row gutter={[16, 0]}>
 
           <Col xs={24} xxl={24}>
-            <Form.Item label="Registration Number" name="registration_number" rules={[{ required: true, message: 'Please input your username!' }]}>
-              <Input />
-            </Form.Item>
+            <CustomField name="registration_number" label="Número de registro" disabled={!isEditable} />
           </Col>
 
           <Col xs={24} xxl={12}>
-            <Form.Item label="Nombre comercial" name="comercial_name" rules={[{ required: true, message: 'Please input your username!' }]}>
-              <Input />
-            </Form.Item>
+            <CustomField name="comercial_name" label="Nombre comercial" disabled={!isEditable} />
           </Col>
 
           <Col xs={24} xxl={12}>
-            <Form.Item label="Representante legal" name="legal_representative" rules={[{ required: true, message: 'Please input your username!' }]}>
-              <Input />
-            </Form.Item>
+            <CustomField name="legal_representative" label="Representante legal" disabled={!isEditable} />
           </Col>
 
           <Col xs={24} xxl={24}>
-            <Form.Item label="Dirección" name="address" rules={[{ required: true, message: 'Please input your username!' }]}>
-              <Input />
-            </Form.Item>
+            <CustomField name="address" label="Dirección" disabled={!isEditable} />
           </Col>
 
           <Col xs={24} xxl={12}>
-            <Form.Item label="Rubro" name="type_of_business" rules={[{ required: true, message: 'Please input your username!' }]}>
-              <Input />
-            </Form.Item>
+            <CustomField name="type_of_business" label="Rubro" disabled={!isEditable} />
           </Col>
 
           <Col xs={24} xxl={12}>
-            <Form.Item label="Categoria" name="category" rules={[{ required: true, message: 'Please input your username!' }]}>
-              <Input />
-            </Form.Item>
+            <CustomField name="category" label="Categoria" disabled={!isEditable} />
           </Col>
 
           <Col xs={24} xxl={24}>
-            <Form.Item label="Telefono/fax" name="tel_fax" rules={[{ required: true, message: 'Please input your username!' }]}>
-              <Input />
-            </Form.Item>
+            <CustomField name="tel_fax" label="Telefono/fax " disabled={!isEditable} />
           </Col>
 
           <Col xs={24} xxl={24}>
-            <Form.Item label="Sitio Web" name="website" rules={[{ required: true, message: 'Please input your username!' }]}>
-              <Input />
-            </Form.Item>
+            <CustomField name="website" label="Sitio Web " disabled={!isEditable} />
           </Col>
-
         </Row>
       </Col>
     </Row>

@@ -1,86 +1,70 @@
-
 import { Button, Form, message, Steps } from 'antd';
 import { Step_1, Step_2, Step_3 } from './Steps';
 import { useState } from 'react';
 import { Formik } from 'formik';
 import { initialValues, validationSchema } from './NewQuotationForm.data';
+import { useTheme } from '../../../../hooks';
 
-
-
-
-const steps = [
-    { title: 'Información del proveedor', content: <Step_1 /> },
-    { title: 'Detalles de la factura', content: <Step_2 /> },
-    { title: 'Vista preeliminar', content: <Step_3 /> },
-];
-
-
-
-
+const steps = ( handleChange, handleBlur, values, touched, errors, setFieldValue) => {
+    return ([
+        { title: 'Información del proveedor', content: <Step_1 setFieldValue={setFieldValue}/> },
+        { title: 'Detalles de la factura', content: <Step_2 handleChange={handleChange} handleBlur={handleBlur} values={values} touched={touched} errors={errors}/> },
+        { title: 'Vista preeliminar', content: <Step_3 values={ values }/> },
+    ])
+};
 
 export const NewQuotationForm = () => {
 
-    const handleSubmit = () => {
-        console.log('Formulario enviado');
+    const handleSubmit = ( values, actions ) => {
+        if (current < 2) {
+            next();
+            actions.setTouched({});
+        } else {
+            console.log(values)
+            //   const resultAction = await dispatch(enviarFormulario(values));
+            //   if (enviarFormulario.fulfilled.match(resultAction)) {
+            //     message.success('Formulario enviado con éxito');
+            //   } else {
+            //     message.error(resultAction.payload || 'Error al enviar');
+            //   }
+
+            console.log('Todo bien')
+        }
     }
 
     const [current, setCurrent] = useState(0);
-    const next = () => {
-        setCurrent(current + 1);
-    };
-    const prev = () => {
-        setCurrent(current - 1);
-    };
+
+    const next = () => { setCurrent(current + 1); };
+    const prev = () => { setCurrent(current - 1); };
+    const items = steps().map(item => ({ key: item.title, title: item.title }));
+
+    const { colorBgContainer } = useTheme();
 
 
-    const items = steps.map(item => ({ key: item.title, title: item.title }));
-
-
-    const contentStyle = {
-        // lineHeight: '260px',
-        // textAlign: 'center',
-        // color: token.colorTextTertiary,
-        // backgroundColor: token.colorFillAlter,
-        // borderRadius: token.borderRadiusLG,
-        // border: `1px dashed ${token.colorBorder}`,
-        // marginTop: 16,
-    };
     return (
         <>
             <Steps current={current} items={items} />
 
-            <Formik initialValues={initialValues} validationSchema={validationSchema[current] || null} onSubmit={handleSubmit} >
-                {({ handleSubmit, handleChange, handleBlur, values, touched, errors }) => (
+            <Formik initialValues={initialValues} validationSchema={validationSchema[current] || null} onSubmit={handleSubmit} validateOnChange={false} validateOnBlur={true}>
+                {({ handleSubmit, handleChange, handleBlur, values, touched, errors, setFieldValue }) => (
 
                     <Form layout="vertical" onFinish={handleSubmit} >
-                        <div style={contentStyle}>{steps[current].content}</div>
+                        <div>{steps(handleChange, handleBlur, values, touched, errors, setFieldValue)[current].content}</div>
 
-
-
-                        <div style={{ marginTop: 24 }}>
-                            {current < steps.length - 1 && (
-                                <Button type="primary" onClick={() => next()}>
-                                    Next
-                                </Button>
-                            )}
-                            {current === steps.length - 1 && (
-                                <Button type="primary" htmlType="submit" loading={false} onClick={() => message.success('Processing complete!')}>
-                                    Done
-                                </Button>
-                            )}
-                            {current > 0 && (
-                                <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-                                    Previous
-                                </Button>
-                            )}
+                        <div
+                            style={{
+                                position: 'sticky', bottom: 0, left: 0, width: '100%', background: colorBgContainer, padding: '10px 0', display: 'flex',
+                                justifyContent: 'center', gap: '8px', zIndex: 10, marginTop: 'auto'
+                            }}
+                        >
+                            {current > 0 && (<Button onClick={() => prev()}> Previous </Button>)}
+                            {current < steps.length - 1 && (<Button type="primary" htmlType='submit'> Next </Button>)}
+                            {current === steps.length - 1 && (<Button type="primary" htmlType="submit" onClick={() => message.success('Processing complete!')} > Done </Button>)}
                         </div>
 
                     </Form>
 
                 )}
-
-
-
             </Formik>
         </>
     );

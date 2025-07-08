@@ -11,7 +11,8 @@ export const useTheme = () => {
             colorBgBase,
             colorTextBase,
             colorBgContainer,
-            borderRadiusLG
+            borderRadiusLG,
+            fontSize
         },
     } = theme.useToken();
 
@@ -28,6 +29,7 @@ export const useTheme = () => {
             textBase: colorTextBase,
         },
         colorBgContainer,
-        borderRadiusLG
+        borderRadiusLG,
+        fontSize
     };
 };

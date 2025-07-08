@@ -32,7 +32,8 @@ export const lightTheme = {
                 borderColor: '#69b1ff',
                 color: '#f0f0f0'
             }
-        }
+        }, 
+        fontSize: 15
 
     },
 
@@ -84,7 +85,8 @@ export const darkTheme = {
                 borderColor: '#ffa39e',
                 color: '#f0f0f0'
             }
-        }
+        },
+        fontSize: 15
     },
 
     components: {

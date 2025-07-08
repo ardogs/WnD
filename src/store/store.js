@@ -5,6 +5,6 @@ import { quotationSlice } from './quotation';
 export const store = configureStore({
     reducer: {
         settings: settingsSlice.reducer,
-        quotattion: quotationSlice.reducer
+        quotation: quotationSlice.reducer
     },
 });
