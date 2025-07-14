@@ -33,7 +33,7 @@ export const lightTheme = {
                 color: '#f0f0f0'
             }
         }, 
-        fontSize: 15
+        fontSize: 18
 
     },
 
@@ -90,7 +90,7 @@ export const darkTheme = {
                 color: '#f0f0f0'
             }
         },
-        fontSize: 15
+        fontSize: 18
     },
 
     components: {

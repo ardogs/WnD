@@ -11,15 +11,22 @@ export const Step_1 = ({ setFieldValue }) => {
   const dispatch = useDispatch();
   const { suppliers, isLoading, newQuotation } = useSelector(state => state.quotation);
   const { documentType } = newQuotation;
-  const { isEditable  } = newQuotation.step1
+  const { isEditable } = newQuotation.step1
   const [img, setImg] = useState(`Doc_${documentType}`);
+
+  // useEffect(() => {
+  //   handleSupplierChange(1);
+  // }, [suppliers]);
 
   useEffect(() => {
     if (!suppliers || suppliers.length === 0)
       dispatch(fetchAllSuppliers()); // ① Hacer la llamada una vez al montar
+
+    handleSupplierChange(1);
   }, [dispatch]);
 
   const handleSupplierChange = (index = 0) => {
+    // console.log('LLamdo a handleSupplierChange con index:', index);
     setImg(`Doc_${index}`);
     dispatch(setDocumentType(index));
 
@@ -46,7 +53,7 @@ export const Step_1 = ({ setFieldValue }) => {
       {/* {console.log()} */}
       <Col xs={24} xxl={14} style={{ Height: '100vh' }}>
         <Flex justify="center" align="center" style={{ height: '100%', width: '100%', gap: 25 }} vertical>
-          <Select defaultValue={documentType} onChange={(index) => handleSupplierChange(index)} placeholder="Selección de documento" options={options} loading={isLoading} />
+          <Select size="large" defaultValue={documentType} onChange={(index) => handleSupplierChange(index)} placeholder="Selección de documento" options={options} loading={isLoading} />
           <Checkbox checked={isEditable} onChange={(e) => dispatch(setIsEditable(e.target.checked))}>
             Habilitar edición
           </Checkbox>
@@ -55,40 +62,41 @@ export const Step_1 = ({ setFieldValue }) => {
       </Col>
 
       <Col xs={24} xxl={10} >
-        <Row gutter={[16, 0]}>
+        <Flex justify="center" align="center" style={{ height: '100%', width: '100%' }}>
+          <Row gutter={[16, 0]}>
+            <Col xs={24} xxl={24}>
+              <CustomField name="registration_number" label="Número de registro" disabled={!isEditable} />
+            </Col>
 
-          <Col xs={24} xxl={24}>
-            <CustomField name="registration_number" label="Número de registro" disabled={!isEditable} />
-          </Col>
+            <Col xs={24} xxl={12}>
+              <CustomField name="comercial_name" label="Nombre comercial" disabled={!isEditable} />
+            </Col>
 
-          <Col xs={24} xxl={12}>
-            <CustomField name="comercial_name" label="Nombre comercial" disabled={!isEditable} />
-          </Col>
+            <Col xs={24} xxl={12}>
+              <CustomField name="legal_representative" label="Representante legal" disabled={!isEditable} />
+            </Col>
 
-          <Col xs={24} xxl={12}>
-            <CustomField name="legal_representative" label="Representante legal" disabled={!isEditable} />
-          </Col>
+            <Col xs={24} xxl={24}>
+              <CustomField name="address" label="Dirección" disabled={!isEditable} />
+            </Col>
 
-          <Col xs={24} xxl={24}>
-            <CustomField name="address" label="Dirección" disabled={!isEditable} />
-          </Col>
+            <Col xs={24} xxl={12}>
+              <CustomField name="type_of_business" label="Rubro" disabled={!isEditable} />
+            </Col>
 
-          <Col xs={24} xxl={12}>
-            <CustomField name="type_of_business" label="Rubro" disabled={!isEditable} />
-          </Col>
+            <Col xs={24} xxl={12}>
+              <CustomField name="category" label="Categoria" disabled={!isEditable} />
+            </Col>
 
-          <Col xs={24} xxl={12}>
-            <CustomField name="category" label="Categoria" disabled={!isEditable} />
-          </Col>
+            <Col xs={24} xxl={24}>
+              <CustomField name="tel_fax" label="Telefono/fax " disabled={!isEditable} />
+            </Col>
 
-          <Col xs={24} xxl={24}>
-            <CustomField name="tel_fax" label="Telefono/fax " disabled={!isEditable} />
-          </Col>
-
-          <Col xs={24} xxl={24}>
-            <CustomField name="website" label="Sitio Web " disabled={!isEditable} />
-          </Col>
-        </Row>
+            <Col xs={24} xxl={24}>
+              <CustomField name="website" label="Sitio Web " disabled={!isEditable} />
+            </Col>
+          </Row>
+        </Flex>
       </Col>
     </Row>
   );

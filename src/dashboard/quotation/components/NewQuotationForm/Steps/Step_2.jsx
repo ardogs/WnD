@@ -131,7 +131,7 @@ export const Step_2 = ({ values }) => {
   const { calculateVatperItem, calculateTotalVat, calculateSupplyPrice, calculatePriceBeforeTaxes, calculateTotalPrice } = newQuotation.step2
 
   return (
-    <Row style={{ marginTop: '25px' }} gutter={[16, 0]}>
+    <Row style={{ marginTop: '60px' }} gutter={[16, 0]}>
       <Col xs={24} xxl={6}>
         <CustomDatePickerField label="Fecha" name="date" />
       </Col>

@@ -14,5 +14,5 @@ export const DarkmodeSwitch = () => {
         (result?.ok) ? message.success(t("apiMessages.settings.updateSuccess")) : message.error(`${t("apiMessages.settings.updateError")} ${result.error}`);
     };
 
-    return <Switch checked={darkmode} checkedChildren={<MoonFilled />} unCheckedChildren={<SunFilled />} loading={isLoadingDarkmode} onChange={(checked) => onToggle(checked)} />
+    return <Switch checked={darkmode} checkedChildren={<MoonFilled />} unCheckedChildren={<SunFilled />} loading={isLoadingDarkmode} onChange={(checked) => onToggle(checked)} className='no-drag-region'/>
 }

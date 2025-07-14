@@ -32,3 +32,50 @@ body {
     margin-bottom: 16px;
   }
 }
+
+#titlebar {
+  /* height: 30px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: #1f1f1f; */
+  color: white;
+}
+
+/* Esta parte se puede arrastrar */
+.drag-region {
+  /* flex: 1;
+  padding-left: 10px; */
+  -webkit-app-region: drag;
+}
+
+.no-drag-region {
+  -webkit-app-region: no-drag;
+}
+
+/* Los botones no deben ser arrastrables */
+.window-controls {
+  display: flex;
+  /* -webkit-app-region: no-drag;  */
+}
+
+.window-controls button {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* Hover claro para minimizar y maximizar */
+#minimize:hover,
+#maximize:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* blanco semitransparente */
+}
+
+/* Hover rojo para cerrar */
+#close:hover {
+  background-color: #ff4d4f; /* rojo vibrante estilo Windows */
+}
