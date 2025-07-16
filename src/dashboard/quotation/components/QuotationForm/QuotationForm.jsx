@@ -2,7 +2,7 @@ import { Button, Form, message, Steps } from 'antd';
 import { Step_1, Step_2, Step_3 } from './Steps';
 import { useState } from 'react';
 import { Formik } from 'formik';
-import { initialValues, validationSchema } from './NewQuotationForm.data';
+import { initialValues, validationSchema } from './QuotationForm.data';
 import { useTheme } from '../../../../hooks';
 
 const steps = (values, setFieldValue) => {

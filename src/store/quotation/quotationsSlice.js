@@ -6,7 +6,7 @@ export const quotationSlice = createSlice({
         suppliers: [],
         currentMode: 'create',
         newQuotation: {
-            documentType: 0,
+            documentType: 1,
             step1: {
                 isEditable: false,
             },

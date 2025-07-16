@@ -34,18 +34,14 @@ body {
 }
 
 #titlebar {
-  /* height: 30px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: #1f1f1f; */
   color: white;
 }
 
 /* Esta parte se puede arrastrar */
 .drag-region {
-  /* flex: 1;
-  padding-left: 10px; */
   -webkit-app-region: drag;
 }
 
@@ -53,10 +49,9 @@ body {
   -webkit-app-region: no-drag;
 }
 
-/* Los botones no deben ser arrastrables */
+
 .window-controls {
   display: flex;
-  /* -webkit-app-region: no-drag;  */
 }
 
 .window-controls button {
@@ -69,13 +64,11 @@ body {
   border-radius: 10px;
 }
 
-/* Hover claro para minimizar y maximizar */
 #minimize:hover,
 #maximize:hover {
-  background-color: rgba(255, 255, 255, 0.1); /* blanco semitransparente */
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Hover rojo para cerrar */
 #close:hover {
-  background-color: #ff4d4f; /* rojo vibrante estilo Windows */
+  background-color: #ff4d4f;
 }
