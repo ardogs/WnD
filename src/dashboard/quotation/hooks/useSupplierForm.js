@@ -3,7 +3,7 @@ import { fetchAllSuppliers, setDocumentType } from "../../../store/quotation";
 import { useDispatch, useSelector } from "react-redux";
 
 
-export const useSupplierForm = ({ setFieldValue }) => {
+export const useSupplierForm = (setFieldValue ) => {
 
     const dispatch = useDispatch();
     const { suppliers, isLoading, newQuotation } = useSelector(state => state.quotation);
