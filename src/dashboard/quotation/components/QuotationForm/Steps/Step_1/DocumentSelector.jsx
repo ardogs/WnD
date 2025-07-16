@@ -13,9 +13,9 @@ export const DocumentSelector = ({ options, selected, onChange, isLoading }) => 
 
     return (
         <Flex justify="center" align="center" style={{ height: '100%', width: '100%', gap: 25 }} vertical>
-            <Select size="large" onChange={onChange} placeholder="Selección de documento" options={options} loading={isLoading} />
+            <Select size="large" defaultValue={selected} onChange={onChange} placeholder="Selección de documento" options={options} loading={isLoading}/>
             <EditToggle />
-            <Image width={"35%"} src={`/src/assets/${img}.png`} />
+            <Image width={"35%"} src={`/src/assets/${img}.webp`} />
         </Flex>
     );
 }
