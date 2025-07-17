@@ -4,9 +4,9 @@ import { SupplierFormFields } from "./SupplierFormFields";
 import { useSupplierForm } from "../../../../hooks/useSupplierForm";
 
 
-export const Step_1 = ({ setFieldValue }) => {
+export const Step_1 = () => {
 
-  const { options, documentType, handleSupplierChange, isLoading  } = useSupplierForm( setFieldValue )
+  const { options, documentType, handleSupplierChange, isLoading, currentSupplier } = useSupplierForm();
 
   return (
     <Row style={{ marginTop: '25px' }}>
@@ -15,7 +15,7 @@ export const Step_1 = ({ setFieldValue }) => {
       </Col>
 
       <Col xs={24} xxl={10} >
-        <SupplierFormFields />
+        <SupplierFormFields supplier={currentSupplier}/>
       </Col>
     </Row>
   );

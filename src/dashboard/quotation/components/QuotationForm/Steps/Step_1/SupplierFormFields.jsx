@@ -1,44 +1,41 @@
-import { useSelector } from 'react-redux';
-import { Col, Flex, Row } from 'antd'
-import { CustomField } from '../../../CustomInputs';
+import { Col, Flex, Row, Typography } from 'antd'
 
-export const SupplierFormFields = () => {
-
-    const { isEditable } = useSelector(state => state.quotation.newQuotation.step1);
+const { Title, Text } = Typography
+export const SupplierFormFields = ({supplier}) => {
 
     return (
-        <Flex justify="center" align="center" style={{ height: '100%', width: '100%' }}>
+        <Flex justify="center" align="center" style={{ height: '100%', width: '100%' }} className='no-select'>
             <Row gutter={[16, 0]}>
                 <Col xs={24} xxl={24}>
-                    <CustomField name="registration_number" label="Número de registro" disabled={!isEditable} />
+                    <Title level={5}>Número de registro: <Text type="secondary" name="registration_number">{ supplier?.registration_number || "" }</Text></Title>
                 </Col>
 
                 <Col xs={24} xxl={12}>
-                    <CustomField name="comercial_name" label="Nombre comercial" disabled={!isEditable} />
+                    <Title level={5}>Nombre comercial: <Text type="secondary" name="comercial_name">{ supplier?.comercial_name || "" }</Text></Title>
                 </Col>
 
                 <Col xs={24} xxl={12}>
-                    <CustomField name="legal_representative" label="Representante legal" disabled={!isEditable} />
+                    <Title level={5}>Representante legal: <Text type="secondary">{ supplier?.legal_representative || "" }</Text></Title>
                 </Col>
 
                 <Col xs={24} xxl={24}>
-                    <CustomField name="address" label="Dirección" disabled={!isEditable} />
+                    <Title level={5}>Dirección: <Text type="secondary">{ supplier?.address || "" }</Text></Title>
                 </Col>
 
                 <Col xs={24} xxl={12}>
-                    <CustomField name="type_of_business" label="Rubro" disabled={!isEditable} />
+                    <Title level={5}>Rubro: <Text type="secondary">{ supplier?.type_of_business || "" }</Text></Title>
                 </Col>
 
                 <Col xs={24} xxl={12}>
-                    <CustomField name="category" label="Categoria" disabled={!isEditable} />
+                    <Title level={5}>Categoria: <Text type="secondary">{ supplier?.category || "" }</Text></Title>
                 </Col>
 
                 <Col xs={24} xxl={24}>
-                    <CustomField name="tel_fax" label="Telefono/fax " disabled={!isEditable} />
+                    <Title level={5}>Telefono/fax: <Text type="secondary">{ supplier?.tel_fax || "" }</Text></Title>
                 </Col>
 
                 <Col xs={24} xxl={24}>
-                    <CustomField name="website" label="Sitio Web " disabled={!isEditable} />
+                    <Title level={5}>Sitio Web: <Text type="secondary">{ supplier?.website || "" }</Text></Title>
                 </Col>
             </Row>
         </Flex>

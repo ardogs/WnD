@@ -1,13 +1,15 @@
-import { useCallback, useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { fetchAllSuppliers, setDocumentType } from "../../../store/quotation";
 import { useDispatch, useSelector } from "react-redux";
+import { useFormikContext } from "formik";
 
 
-export const useSupplierForm = (setFieldValue ) => {
+export const useSupplierForm = ( ) => {
 
     const dispatch = useDispatch();
     const { suppliers, isLoading, newQuotation } = useSelector(state => state.quotation);
     const { documentType } = newQuotation;
+    const { setFieldValue } = useFormikContext();
 
     useEffect(() => {
         if (!suppliers || suppliers.length === 0)
@@ -15,32 +17,24 @@ export const useSupplierForm = (setFieldValue ) => {
     }, [dispatch]);
 
     useEffect(() => {
-        if (suppliers.length > 0) {
+        if (suppliers.length > 0) 
             handleSupplierChange(documentType ?? 0);
-        }
+        
     }, [suppliers, documentType]);
 
+    const [currentSupplier, setCurrentSupplier] = useState(null)
+
     const handleSupplierChange = useCallback((index = 0) => {
-
         dispatch(setDocumentType(index));
-
         const selected = suppliers[index];
         if (!selected) return;
-        const fields = [
-            "registration_number",
-            "comercial_name",
-            "legal_representative",
-            "address",
-            "type_of_business",
-            "category",
-            "tel_fax",
-            "website",
-        ];
+        setCurrentSupplier( selected );
 
-        fields.forEach((field) => {
-            setFieldValue(field, selected[field]);
-        });
-    }, [suppliers, dispatch, setFieldValue]);
+        setFieldValue("registration_number", selected.registration_number);
+        setFieldValue("comercial_name", selected.comercial_name);
+
+
+    }, [suppliers, dispatch]);
 
 
     const options = useMemo(() => (
@@ -55,5 +49,6 @@ export const useSupplierForm = (setFieldValue ) => {
         isLoading,
         documentType,
         handleSupplierChange,
+        currentSupplier
     };
 }

@@ -5,9 +5,9 @@ import { Formik } from 'formik';
 import { initialValues, validationSchema } from './QuotationForm.data';
 import { useTheme } from '../../../../hooks';
 
-const steps = (values, setFieldValue) => {
+const steps = (values) => {
     return ([
-        { title: 'Información del proveedor', content: <Step_1 setFieldValue={setFieldValue} /> },
+        { title: 'Información del proveedor', content: <Step_1  /> },
         { title: 'Detalles de la factura', content: <Step_2 values={values} /> },
         { title: 'Vista preeliminar', content: <Step_3 values={values} /> },
     ])
@@ -46,10 +46,10 @@ export const NewQuotationForm = () => {
             <Steps current={current} items={items} />
 
             <Formik initialValues={initialValues} validationSchema={validationSchema[current] || null} onSubmit={handleSubmit} validateOnChange={false} validateOnBlur={true}>
-                {({ handleSubmit, values, setFieldValue }) => (
+                {({ handleSubmit, values }) => (
 
                     <Form layout="vertical" onFinish={handleSubmit} >
-                        <div>{steps(values, setFieldValue)[current].content}</div>
+                        <div>{steps(values)[current].content}</div>
 
                         <div
                             style={{
@@ -58,8 +58,8 @@ export const NewQuotationForm = () => {
                             }}
                         >
                             {current > 0 && (<Button onClick={() => prev()} size='large'> Previous </Button>)}
-                            {current < steps.length  && (<Button type="primary" htmlType='submit' size='large'> Next </Button>)}
-                            {current === steps.length  && (<Button type="primary" htmlType="submit" onClick={() => message.success('Processing complete!')} size='large'> Done </Button>)}
+                            {current < steps.length + 1  && (<Button type="primary" onClick={() => next()} size='large'> Next </Button>)}
+                            {current === steps.length + 1  && (<Button type="primary" htmlType="submit" onClick={() => message.success('Processing complete!')} size='large'> Done </Button>)}
                         </div>
 
                     </Form>

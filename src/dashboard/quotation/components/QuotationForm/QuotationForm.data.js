@@ -3,12 +3,12 @@ import * as Yup from 'yup';
 export const initialValues = {
     registration_number: "RN_1",
     comercial_name: "CN_1",
-    legal_representative: "LR_1",
-    address: "Address 1",
-    type_of_business: "Type of Business 1",
-    category: "Category 1",
-    tel_fax: "TF_1",
-    website: "https://google.com.mx",
+    // legal_representative: "LR_1",
+    // address: "Address 1",
+    // type_of_business: "Type of Business 1",
+    // category: "Category 1",
+    // tel_fax: "TF_1",
+    // website: "https://google.com.mx",
 
     date: "2025-06-04",
     customer: "customer_1",
@@ -36,16 +36,16 @@ export const initialValues = {
 
 
 export const validationSchema = [
-    Yup.object({
-        registration_number: Yup.string().required('Campo requerido'),
-        comercial_name: Yup.string().required('Campo requerido'),
-        legal_representative: Yup.string().required('Campo requerido'),
-        address: Yup.string().required('Campo requerido'),
-        type_of_business: Yup.string().required('Campo requerido'),
-        category: Yup.string().required('Campo requerido'),
-        tel_fax: Yup.string().required('Campo requerido'),
-        website: Yup.string().url('Debe ser una URL válida').required('Campo requerido')
-    }),
+    // Yup.object({
+    //     registration_number: Yup.string().required('Campo requerido'),
+    //     comercial_name: Yup.string().required('Campo requerido'),
+    //     legal_representative: Yup.string().required('Campo requerido'),
+    //     address: Yup.string().required('Campo requerido'),
+    //     type_of_business: Yup.string().required('Campo requerido'),
+    //     category: Yup.string().required('Campo requerido'),
+    //     tel_fax: Yup.string().required('Campo requerido'),
+    //     website: Yup.string().url('Debe ser una URL válida').required('Campo requerido')
+    // }),
 
     Yup.object().shape({
         date: Yup.date().required('Campo requerido'),
