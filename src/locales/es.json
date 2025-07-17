@@ -47,16 +47,12 @@
                     "edit": "Editar",
                     "delete": "Eliminar"
                 }
-            }, 
-            "newQuotation":{
+            },
+            "newQuotation": {
                 "title": "Nueva cotización"
             },
-            "editQuotation": {
-
-            },
-            "deleteQuotation": {
-
-            }
+            "editQuotation": {},
+            "deleteQuotation": {}
         },
         "invoices": {
             "mainPage": {
@@ -66,6 +62,16 @@
                     "new": "Nueva",
                     "edit": "Editar",
                     "delete": "Eliminar"
+                }
+            }
+        },
+        "companies": {
+            "mainPage": {
+                "title": "Mis empresas",
+                "instructions": "Por favor, selecciona una opción",
+                "button": {
+                    "edit": "Editar"
+ 
                 }
             }
         },
@@ -87,14 +93,14 @@
                 }
             },
             "APIConnection": {
-                "title" : "Titulo en Español",
-                "baseurl":{
+                "title": "Titulo en Español",
+                "baseurl": {
                     "title": "URL base del API",
                     "label": "URL del API ",
                     "placeholder": "URL del API",
                     "button": "Actualizar"
                 },
-                "connectionCheck":{
+                "connectionCheck": {
                     "title": "Probar conexión",
                     "button": "Iniciar prueba",
                     "message": {
@@ -112,9 +118,9 @@
             }
         }
     },
-    "apiMessages":{
-        "settings":{
-            "updateSuccess":"Las configuraciones han sido guardadas",
+    "apiMessages": {
+        "settings": {
+            "updateSuccess": "Las configuraciones han sido guardadas",
             "updateError": "Error al guardar las configuraciones. Código de error: ",
             "getInitialConfigurationError": "Error al obtener la configuración inicial. Por favor revise la conexión al API. Código de error: "
         }
