@@ -1,4 +1,5 @@
 import { Divider, Flex, Row, Table, Typography, Col } from "antd";
+import { useFormikContext } from "formik";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
 
@@ -6,8 +7,10 @@ const { Title, Text } = Typography;
 
 const numberFormat = value => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
-export const Step_3 = ({ values }) => {
-  // Memoize columns to avoid recreation on every render
+export const Step_3 = () => {
+
+  const { values } = useFormikContext();
+
   const columns_table1 = useMemo(() => ([
     { title: 'Descripción', dataIndex: 'description', key: 'description', align: 'right' },
     { title: 'Especificación del producto', dataIndex: 'product_especification', key: 'product_especification', align: 'right' },
@@ -26,7 +29,6 @@ export const Step_3 = ({ values }) => {
     { title: 'Precio en letras', dataIndex: 'total_price_letter', key: 'total_price_letter', align: 'right' },
   ]), []);
 
-  // Memoize data sources
   const dataSource = useMemo(() =>
     (values.quotation_item || []).map((item, index) => ({ key: index, ...item })),
     [values.quotation_item]
@@ -41,7 +43,7 @@ export const Step_3 = ({ values }) => {
   }]), [values.price_before_taxes, values.vat_total, values.total_price_number, values.total_price_letter]);
 
   const { suppliers } = useSelector(state => state.quotation);
-  const supplierInfo = suppliers.find( obj => obj.registration_number === values.registration_number)
+  const supplierInfo = suppliers.find(obj => obj.registration_number === values.registration_number)
 
   return (
     <div style={{ marginTop: '60px', }}>

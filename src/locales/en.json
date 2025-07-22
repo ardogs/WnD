@@ -19,6 +19,9 @@
                 "edit": "Edit",
                 "delete": "Delete"
             },
+            "companies": {
+                "title": "My companies"
+            },
             "settings": {
                 "title": "Settings"
             }

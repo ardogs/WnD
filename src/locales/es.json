@@ -19,6 +19,9 @@
                 "edit": "Editar",
                 "delete": "Eliminar"
             },
+            "companies": {
+                "title": "Mis compañias"
+            },
             "settings": {
                 "title": "Configuración"
             }
@@ -71,7 +74,6 @@
                 "instructions": "Por favor, selecciona una opción",
                 "button": {
                     "edit": "Editar"
- 
                 }
             }
         },

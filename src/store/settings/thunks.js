@@ -37,7 +37,7 @@ export const updateLanguage = (lang) => {
         dispatch(setLoading({ key: 'language', value: true }));
 
         try {
-            await updateLanguageAPI(lang);
+            // await updateLanguageAPI(lang);
             dispatch(changeLanguage(lang));
             return { ok: true }
         } catch (error) {
