@@ -30,6 +30,11 @@ export const initialValues = {
 
 export const validationSchema = [
 
+    Yup.object({
+        registration_number: Yup.string().required('Campo requerido'),
+        comercial_name: Yup.string().required('Campo requerido'),
+    }),
+
     Yup.object().shape({
         date: Yup.date().required('Campo requerido'),
         customer: Yup.string().required('Campo requerido'),

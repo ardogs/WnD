@@ -36,7 +36,7 @@ const ControlButtons = () => {
 
     return (
         <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }} className="drag-region">
-            <div id="titlebar" className="no-drag-region" style={{ gap: 1 }}>
+            <div id="titlebar" className="no-drag-region" style={{ gap: 16 }}>
                 <DarkmodeSwitch />
                 <div className="window-controls">
                     <button id="minimize" onClick={handleMinimize}><MinusOutlined /></button>

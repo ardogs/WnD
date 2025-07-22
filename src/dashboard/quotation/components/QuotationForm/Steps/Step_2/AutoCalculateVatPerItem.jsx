@@ -8,7 +8,7 @@ export const AutoCalculateVatPerItem = ({ index, calculateVatperItem }) => {
 
     useEffect(() => {
         const debouncedCalculate = debounce((price) => {
-            if (!isNaN(price) && calculateVatperItem) {
+            if (!isNaN(price)) {
                 const vat = ((10 / 100) * parseFloat(price)) + parseFloat(price) || 0;
                 setFieldValue(`quotation_item[${index}].vat`, Math.floor(vat));
             }

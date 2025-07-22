@@ -5,8 +5,8 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1280,
     height: 800,
-    minHeight: 800,
-    minWidth: 1280,
+    minHeight: 900,
+    minWidth: 1500,
     frame: false, // para ocultar la barra de título
     
     webPreferences: {
