@@ -52,7 +52,7 @@ export const NewQuotationForm = () => {
                         <div>{steps(t)[current].content}</div>
                         <div
                             style={{ position: 'sticky', bottom: 0, left: 0, width: '100%', background: colorBgContainer, padding: '10px 0', display: 'flex', justifyContent: 'center', gap: '8px', zIndex: 10, marginTop: 'auto' }} >
-                            {current > 0 && (<Button onClick={() => prev()} size='large'> {t("dashboard.quotations.newQuotation.navigation.previous")} </Button>)}
+                            {(current > 0 && current < items.length -1)   && (<Button onClick={() => prev()} size='large'> {t("dashboard.quotations.newQuotation.navigation.previous")} </Button>)}
                             {current < items.length - 1 && (<Button type="primary" htmlType="submit" size='large'> {t("dashboard.quotations.newQuotation.navigation.next")} </Button>)}
                             {current === items.length - 1 && (<Button type="primary" htmlType="submit" onClick={() => message.success('Processing complete!')} size='large'>{t("dashboard.quotations.newQuotation.navigation.gotoHome")}</Button>)}
                         </div>
