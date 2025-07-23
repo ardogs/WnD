@@ -52,7 +52,79 @@
                 }
             },
             "newQuotation": {
-                "title": "Nueva cotización"
+                "title": "Nueva cotizacion",
+                "steps": {
+                    "step1": {
+                        "title": "Información del proovedor",
+                        "registrationNumber": "Número de registro",
+                        "comercialName": "Nombre comercial",
+                        "legalRepresentative": "Representante legal",
+                        "address": "Dirección",
+                        "typeOfBusiness": "Tipo de negocio",
+                        "category": "Categoría",
+                        "telFax": "Tel / Fax",
+                        "website": "Sitio Web"
+                    },
+                    "step2": {
+                        "title": "Detalles de la cotización",
+                        "generalInformation": {
+                            "title": "Información general",
+                            "date": "Fecha",
+                            "customer": "Cliente",
+                            "workConcept": "Cocepto del trabajo",
+                            "durationOfWork": "Duración del trabajo"
+                        },
+                        "itemDetails": {
+                            "title": "Información detallada de los suministros utilizados",
+                            "description": "Descripción",
+                            "productEspecification": "Especificación del producto",
+                            "unit": "Unidad",
+                            "amount": "Cantidad",
+                            "unitPrice": "Precio por unidad",
+                            "supplyPrice": "Precio del suministro",
+                            "vat": "IVA",
+                            "observations": "Observaciones",
+                            "AutomaticCalculation": {
+                                "title": "Calcular automáticamente",
+                                "supplyPrice": "Precio del suministro",
+                                "vat": "IVA"
+                            },
+                            "addItem": "Agregar suministro"
+                        },
+                        "totalPricing": {
+                            "title": "Precios totales de la cotización",
+                            "priceBeforeTaxes": "Precio antes de impuestos",
+                            "vatTotal": "IVA total",
+                            "totalPriceNumber": "Precio total",
+                            "totalPriceLetter": "Precio total (en letras)",
+                            "AutomaticCalculation": {
+                                "title": "Calcular automáticamente",
+                                "priceBeforeTaxes": "Precio antes de impuestos",
+                                "totalVat": "IVA total",
+                                "totalPrice": "Precio total"
+                            }
+                        }, 
+                        "errorMessage": {
+                            "requierdField": "Campo requerido",
+                            "mustBeaNumber": "El dato debe ser un número",
+                            "mustBePositive": "El número debe ser pósitivo"
+                        }
+                    },
+                    "step3": {
+                        "title": "Resúmen de la cotización"
+                    },
+                    "step4": {
+                        "title": "Obtener archivo",
+                        "banner": "El archivo se está generando",
+                        "label": "Espere un momento. El botón de abajo se activará cuando el archivo esté listo.",
+                        "button": "Abrir archivo"
+                    }
+                },
+                "navigation": {
+                    "previous": "Previo",
+                    "next": "Siguiente",
+                    "gotoHome": "Volver al inicio"
+                }
             },
             "editQuotation": {},
             "deleteQuotation": {}

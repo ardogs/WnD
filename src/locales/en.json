@@ -50,16 +50,84 @@
                     "edit": "Edit",
                     "delete": "Delete"
                 }
-            }, 
-            "newQuotation":{
-                "title": "New Quotation"
             },
-            "editQuotation": {
-
+            "newQuotation": {
+                "title": "New Quotation",
+                "steps": {
+                    "step1": {
+                        "title": "Supplier Information",
+                        "registrationNumber": "Registration number",
+                        "comercialName": "Comercial name",
+                        "legalRepresentative": "Legal Representative",
+                        "address": "Address",
+                        "typeOfBusiness": "Type of bussiness",
+                        "category": "Category",
+                        "telFax": "Tel / Fax",
+                        "website": "Website"
+                    },
+                    "step2": {
+                        "title": "Quotation details",
+                        "generalInformation": {
+                            "title": "General information",
+                            "date": "Date",
+                            "customer": "Customer",
+                            "workConcept": "Work concept",
+                            "durationOfWork": "Duration of work"
+                        },
+                        "itemDetails": {
+                            "title": "Detailed information on the supplies used",
+                            "description": "Description",
+                            "productEspecification": "Product specification",
+                            "unit": "Unt",
+                            "amount": "Amount",
+                            "unitPrice": "Unit price",
+                            "supplyPrice": "Supply price",
+                            "vat": "VAT",
+                            "observations": "Notes",
+                            "AutomaticCalculation": {
+                                "title": "Calculate automatically",
+                                "supplyPrice": "Supply price",
+                                "vat": "VAT"
+                            },
+                            "addItem": "Add item"
+                        },
+                        "totalPricing": {
+                            "title": "Total quote prices",
+                            "priceBeforeTaxes": "Price before taxes",
+                            "vatTotal": "Total VAT",
+                            "totalPriceNumber": "Total price",
+                            "totalPriceLetter": "Total price (in letters)",
+                            "AutomaticCalculation": {
+                                "title": "Calculate automatically",
+                                "priceBeforeTaxes": "Price before taxes",
+                                "totalVat": "Total VAT",
+                                "totalPrice": "Total price"
+                            }
+                        },
+                        "errorMessage": {
+                            "requierdField": "Required field",
+                            "mustBeaNumber": "The field must be a number",
+                            "mustBePositive": "The number must be positive"
+                        }
+                    },
+                    "step3": {
+                        "title": "Quote Summary"
+                    },
+                    "step4": {
+                        "title": "Get file",
+                        "banner": "The file is being generated",
+                        "label": "Please wait a moment. The button below will be activated when the file is ready.",
+                        "button": "Open file"
+                    }
+                },
+                "navigation": {
+                    "previous": "Previous",
+                    "next": "Next",
+                    "gotoHome": "Go back home"
+                }
             },
-            "deleteQuotation": {
-
-            }
+            "editQuotation": {},
+            "deleteQuotation": {}
         },
         "invoices": {
             "mainPage": {
@@ -115,13 +183,11 @@
             }
         }
     },
-    "apiMessages":{
-
-        "settings":{
-            "updateSuccess":"The settings have been saved",
+    "apiMessages": {
+        "settings": {
+            "updateSuccess": "The settings have been saved",
             "updateError": "Error saving settings. Error code: ",
             "getInitialConfigurationError": "Error retrieving configuration updates. Please check the API connection. Error code: "
         }
     }
-    
 }

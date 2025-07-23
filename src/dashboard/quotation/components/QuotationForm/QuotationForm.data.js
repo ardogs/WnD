@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 
 export const initialValues = {
+
     registration_number: "",
     comercial_name: "",
 
@@ -28,33 +29,33 @@ export const initialValues = {
     total_price_number: ""
 }
 
-export const validationSchema = [
+export const validationSchema =  (t) => ( [
 
     Yup.object({
-        registration_number: Yup.string().required('Campo requerido'),
-        comercial_name: Yup.string().required('Campo requerido'),
+        registration_number: Yup.string().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")),
+        comercial_name: Yup.string().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")),
     }),
 
     Yup.object().shape({
-        date: Yup.date().required('Campo requerido'),
-        customer: Yup.string().required('Campo requerido'),
-        work_concept: Yup.string().required('Campo requerido'),
-        duration_of_work: Yup.string().required('Campo requerido'),
-        price_before_taxes: Yup.number().required('Campo requerido').positive('Debe ser un número positivo').integer('Debe ser un número entero'),
-        vat_total: Yup.number().required('Campo requerido').positive('Debe ser un número positivo').integer('Debe ser un número entero'),
-        total_price_letter: Yup.string().required('Campo requerido'),
-        total_price_number: Yup.number().required('Campo requerido').positive('Debe ser un número positivo').integer('Debe ser un número entero'),
+        date: Yup.date().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")),
+        customer: Yup.string().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")),
+        work_concept: Yup.string().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")),
+        duration_of_work: Yup.string().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")),
+        price_before_taxes: Yup.number().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBePositive")).integer(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBeaNumber")),
+        vat_total: Yup.number().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBePositive")).integer(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBeaNumber")),
+        total_price_letter: Yup.string().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")),
+        total_price_number: Yup.number().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBePositive")).integer(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBeaNumber")),
         quotation_item: Yup.array().of(
             Yup.object().shape({
-                description: Yup.string().required('Campo requerido'),
-                product_especification: Yup.string().required('Campo requerido'),
-                unit: Yup.string().required('Campo requerido'),
-                amount: Yup.number().required('Campo requerido').positive('Debe ser un número positivo').integer('Debe ser un número entero'),
-                unit_price: Yup.number().required('Campo requerido').positive('Debe ser un número positivo').integer('Debe ser un número entero'),
-                supply_price: Yup.number().required('Campo requerido').positive('Debe ser un número positivo').integer('Debe ser un número entero'),
-                vat: Yup.number().required('Campo requerido').positive('Debe ser un número positivo').integer('Debe ser un número entero'),
+                description: Yup.string().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")),
+                product_especification: Yup.string().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")),
+                unit: Yup.string().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")),
+                amount: Yup.number().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBePositive")).integer(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBeaNumber")),
+                unit_price: Yup.number().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBePositive")).integer(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBeaNumber")),
+                supply_price: Yup.number().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBePositive")).integer(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBeaNumber")),
+                vat: Yup.number().required(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBePositive")).integer(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.requierdField")).positive(t("dashboard.quotations.newQuotation.steps.step2.errorMessage.mustBeaNumber")),
                 observations: Yup.string(),
             })
         ),
     })
-];
+]);

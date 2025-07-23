@@ -45,7 +45,7 @@ export const NewQuotationForm = () => {
         <>
             <Steps current={current} items={items} />
 
-            <Formik initialValues={initialValues} validationSchema={validationSchema[current] || null} onSubmit={handleSubmit} validateOnChange={false} validateOnBlur={true}>
+            <Formik initialValues={initialValues} validationSchema={validationSchema(t)[current] || null} onSubmit={handleSubmit} validateOnChange={false} validateOnBlur={true}>
                 {({ handleSubmit }) => (
 
                     <Form layout="vertical" onFinish={handleSubmit} >

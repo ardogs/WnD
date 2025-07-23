@@ -92,14 +92,32 @@
                             "addItem": "새로운 공급 추가"
                         },
                         "totalPricing": {
-                            
+                            "title": "견적의 총 비용",
+                            "priceBeforeTaxes": "세금 전 가격",
+                            "vatTotal": "총 부가가치세",
+                            "totalPriceNumber": "총 가격",
+                            "totalPriceLetter": "총 가격 (문자로 표시)",
+                            "AutomaticCalculation": {
+                                "title": "자동으로 계산",
+                                "priceBeforeTaxes": "세금 전 가격",
+                                "totalVat": "총 부가가치세",
+                                "totalPrice": "총 가격"
+                            }
+                        }, 
+                        "errorMessage": {
+                            "requierdField": "필수 입력 항목",
+                            "mustBeaNumber": "숫자여야 합니다",
+                            "mustBePositive": "양수여야 합니다"
                         }
                     },
                     "step3": {
                         "title": "시사"
                     },
                     "step4": {
-                        "title": "견적 다운로드"
+                        "title": "견적 다운로드",
+                        "banner": "파일이 처리 중입니다",
+                        "label": "잠시만 기다려 주세요. 파일이 준비되면 아래 버튼이 활성화됩니다.",
+                        "button": "파일 열기"
                     }
                 },
                 "navigation": {
