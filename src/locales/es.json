@@ -20,7 +20,8 @@
                 "delete": "Eliminar"
             },
             "companies": {
-                "title": "Mis compañias"
+                "title": "Mis compañias",
+                "edit": "Editar"
             },
             "settings": {
                 "title": "Configuración"

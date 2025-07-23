@@ -13,6 +13,8 @@ const breadcrumbNameMap = (t) => ({
     '/invoices': t("ui.navigation.invoices.title"),
     '/invoices/new': t("ui.navigation.invoices.new"),
     '/invoices/edit': t("ui.navigation.invoices.edit"),
+    '/companies': t("ui.navigation.companies.title"),
+    '/companies/edit': t("ui.navigation.companies.edit"),
     '/settings': t("ui.navigation.settings.title")
 
 });

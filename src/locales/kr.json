@@ -20,7 +20,8 @@
                 "delete": "삭제"
             },
             "companies": {
-                "title": "내 회사들"
+                "title": "내 회사들",
+                "edit": "편집"
             },
             "settings": {
                 "title": "설정"

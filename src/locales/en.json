@@ -20,7 +20,8 @@
                 "delete": "Delete"
             },
             "companies": {
-                "title": "My companies"
+                "title": "My companies",
+                "edit": "Edit"
             },
             "settings": {
                 "title": "Settings"
